@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Navbar from './components/Navbar';
+import Navbar from './components/Layout/Navbar';
+import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage';
 import AllAnimalsPage from './pages/AllAnimalsPage';
 import AnimalDetailsPage from './pages/AnimalDetailsPage';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+      <Footer />
       <Toaster />
     </BrowserRouter>
   );
