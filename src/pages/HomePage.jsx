@@ -11,7 +11,7 @@ const HomePage = () => {
     fetch('/animals.json')
       .then(res => res.json())
       .then(data => {
-        setAnimals(data.slice(0, 4));
+        setAnimals(data.slice(0, 6));
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -29,17 +29,20 @@ const HomePage = () => {
     { name: "দেশী গরু", region: "বগুড়া", rating: 5 },
     { name: "ফ্রিজিয়ান ক্রস", region: "ঢাকা", rating: 5 },
     { name: "ব্ল্যাক বেঙ্গল", region: "রাজশাহী", rating: 5 },
-    { name: "শাহওয়াল গরু", region: "পাবনা", rating: 5 }
+    { name: "শাহওয়াল গরু", region: "পাবনা", rating: 5 },
+    { name: "সাহিওয়াল", region: "চট্টগ্রাম", rating: 5 },
+    { name: "আংলো নুবিয়ান", region: "সিলেট", rating: 5 }
   ];
 
   return (
     <div>
-      {/* Hero Section */}
-      <div className="hero">
-        <div className="container">
-          <h1>পবিত্র কোরবানির জন্য সেরা পশু</h1>
-          <p>সুস্থ, পরিচর্যাকৃত এবং কোরবানির জন্য উপযোগী পশু সংগ্রহ করুন</p>
-          <Link to="/animals" className="btn btn-outline">পশু ব্রাউজ করুন</Link>
+      {/* Hero Section with Background Image */}
+      <div className="hero-section">
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1>পবিত্র কোরবানির জন্য<br />সেরা পশু সংগ্রহ করুন</h1>
+          <p>সুস্থ, পরিচর্যাকৃত এবং কোরবানির জন্য উপযোগী পশু। সেরা দামে, সেরা মানে।</p>
+          <Link to="/animals" className="hero-btn">পশু ব্রাউজ করুন →</Link>
         </div>
       </div>
 
@@ -89,7 +92,7 @@ const HomePage = () => {
       <div className="why-choose-section">
         <div className="container">
           <div className="why-choose-card">
-            <h2>কেন কোরবানিহ্যাট?</h2>
+            <h2>কেন কোরবানিহাট?</h2>
             <div className="features-grid">
               <div>✓ ১০০% সুস্থ ও টিকা দেওয়া পশু</div>
               <div>✓ বিনামূল্যে ভেটেরিনারি চেকআপ</div>

@@ -10,9 +10,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">
-        <img src="/logo.png" alt="Logo" className="logo-img" onError={(e) => e.target.style.display = 'none'} />
-        <span>🐮 QurbaniHat</span>
+      <Link to="/" className="logo-link" style={{ textDecoration: 'none', color: 'white' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '1.8rem' }}>🐮</span>
+          <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+            Qurbani<span style={{ color: '#C49A6C' }}>Hat</span>
+          </span>
+        </div>
       </Link>
       <div className="nav-links">
         <Link to="/">হোম</Link>

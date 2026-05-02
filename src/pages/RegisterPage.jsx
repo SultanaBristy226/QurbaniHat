@@ -10,33 +10,74 @@ const RegisterPage = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    if (name && email && password) {
-      toast.success('Registration successful! Please login');
+    if (name && email && password && password.length >= 6) {
+      toast.success('রেজিস্ট্রেশন সফল! এখন লগইন করুন');
       navigate('/login');
+    } else if (password.length < 6) {
+      toast.error('পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে');
     } else {
-      toast.error('Please fill all fields');
+      toast.error('সব তথ্য পূরণ করুন');
     }
   };
 
+  const handleGoogleLogin = () => {
+    const user = { name: 'গুগল ব্যবহারকারী', email: 'user@gmail.com' };
+    localStorage.setItem('user', JSON.stringify(user));
+    toast.success('গুগল লগইন সফল!');
+    navigate('/');
+  };
+
   return (
-    <div className="form-container">
-      <h2 className="text-center">Register</h2>
-      <form onSubmit={handleRegister}>
-        <div className="form-group">
-          <label>Name</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+    <div className="form-page">
+      <div className="form-card">
+        <h2>নতুন অ্যাকাউন্ট</h2>
+        <p className="form-subtitle">রেজিস্টার করে কোরবানির পশু বুকিং করুন</p>
+        
+        <form onSubmit={handleRegister}>
+          <div className="form-group">
+            <label>পূর্ণ নাম</label>
+            <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              placeholder="আপনার নাম"
+              required 
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>ইমেইল ঠিকানা</label>
+            <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              placeholder="আপনার ইমেইল"
+              required 
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>পাসওয়ার্ড</label>
+            <input 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              placeholder="কমপক্ষে ৬ অক্ষর"
+              required 
+            />
+          </div>
+          
+          <button type="submit" className="form-btn">রেজিস্টার করুন</button>
+        </form>
+        
+        <button onClick={handleGoogleLogin} className="google-btn">
+           গুগল দিয়ে রেজিস্টার করুন
+        </button>
+        
+        <div className="form-footer">
+          <p>ইতিমধ্যে অ্যাকাউন্ট আছে? <Link to="/login">লগইন করুন</Link></p>
         </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </div>
-        <button type="submit" className="btn btn-primary" style={{width: '100%'}}>Register</button>
-      </form>
-      <p className="text-center mt-20">Have account? <Link to="/login">Login</Link></p>
+      </div>
     </div>
   );
 };

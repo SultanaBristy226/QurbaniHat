@@ -12,28 +12,60 @@ const LoginPage = () => {
     if (email && password) {
       const user = { name: email.split('@')[0], email: email };
       localStorage.setItem('user', JSON.stringify(user));
-      toast.success('Login successful!');
+      toast.success('লগইন সফল!');
       navigate('/');
     } else {
-      toast.error('Please enter email and password');
+      toast.error('ইমেইল এবং পাসওয়ার্ড দিন');
     }
   };
 
+  const handleGoogleLogin = () => {
+    const user = { name: 'গুগল ব্যবহারকারী', email: 'user@gmail.com' };
+    localStorage.setItem('user', JSON.stringify(user));
+    toast.success('গুগল লগইন সফল!');
+    navigate('/');
+  };
+
   return (
-    <div className="form-container">
-      <h2 className="text-center">Login</h2>
-      <form onSubmit={handleLogin}>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+    <div className="form-page">
+      <div className="form-card">
+        <h2>স্বাগতম</h2>
+        <p className="form-subtitle">আপনার অ্যাকাউন্টে লগইন করুন</p>
+        
+        <form onSubmit={handleLogin}>
+          <div className="form-group">
+            <label>ইমেইল ঠিকানা</label>
+            <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              placeholder="আপনার ইমেইল দিন"
+              required 
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>পাসওয়ার্ড</label>
+            <input 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              placeholder="পাসওয়ার্ড দিন"
+              required 
+            />
+          </div>
+          
+          <button type="submit" className="form-btn">লগইন করুন</button>
+        </form>
+        
+        <button onClick={handleGoogleLogin} className="google-btn">
+           গুগল দিয়ে লগইন করুন
+        </button>
+        
+        <div className="form-footer">
+          <p>অ্যাকাউন্ট নেই? <Link to="/register">রেজিস্টার করুন</Link></p>
         </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </div>
-        <button type="submit" className="btn btn-primary" style={{width: '100%'}}>Login</button>
-      </form>
-      <p className="text-center mt-20">No account? <Link to="/register">Register</Link></p>
+      </div>
     </div>
   );
 };
