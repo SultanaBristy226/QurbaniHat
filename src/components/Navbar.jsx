@@ -10,23 +10,42 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="container">
-        <Link to="/" className="logo">🐮 QurbaniHat</Link>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/animals">Animals</Link>
+      <div className="nav-container">
+        <Link to="/" className="logo">
+          <span className="logo-icon">🐂</span>
+          <span className="logo-text">Qurbani<span>Hat</span></span>
+        </Link>
+        
+        <div className="nav-menu">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/animals" className="nav-link">All Animals</Link>
+          
           {user ? (
             <>
-              <Link to="/profile">Profile</Link>
-              <button onClick={handleLogout} className="btn" style={{background: 'red', marginLeft: '10px'}}>Logout</button>
+              <Link to="/profile" className="nav-link profile-link">
+                <img 
+                  src={user.photo || `https://ui-avatars.com/api/?name=${user.name}&background=d4a373&color=0d3b2a`} 
+                  alt={user.name} 
+                  className="nav-avatar"
+                />
+                <span className="user-name">{user.name}</span>
+              </Link>
+              <button onClick={handleLogout} className="logout-btn">
+                <span>🚪</span> Logout
+              </button>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/register">Register</Link>
+              <Link to="/login" className="login-btn">Login</Link>
+              <Link to="/register" className="register-btn">Register</Link>
             </>
           )}
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button className="mobile-menu-btn" id="mobileMenuBtn">
+          ☰
+        </button>
       </div>
     </nav>
   );

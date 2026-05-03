@@ -12,58 +12,58 @@ const LoginPage = () => {
     if (email && password) {
       const user = { name: email.split('@')[0], email: email };
       localStorage.setItem('user', JSON.stringify(user));
-      toast.success('লগইন সফল!');
+      toast.success('Login successful!');
       navigate('/');
     } else {
-      toast.error('ইমেইল এবং পাসওয়ার্ড দিন');
+      toast.error('Please enter email and password');
     }
   };
 
   const handleGoogleLogin = () => {
-    const user = { name: 'গুগল ব্যবহারকারী', email: 'user@gmail.com' };
+    const user = { name: 'Google User', email: 'user@gmail.com' };
     localStorage.setItem('user', JSON.stringify(user));
-    toast.success('গুগল লগইন সফল!');
+    toast.success('Google login successful!');
     navigate('/');
   };
 
   return (
     <div className="form-page">
       <div className="form-card">
-        <h2>স্বাগতম</h2>
-        <p className="form-subtitle">আপনার অ্যাকাউন্টে লগইন করুন</p>
+        <h2>Welcome Back</h2>
+        <p className="form-subtitle">Login to your account</p>
         
         <form onSubmit={handleLogin}>
           <div className="form-group">
-            <label>ইমেইল ঠিকানা</label>
+            <label>Email Address</label>
             <input 
               type="email" 
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
-              placeholder="আপনার ইমেইল দিন"
+              placeholder="Enter your email"
               required 
             />
           </div>
           
           <div className="form-group">
-            <label>পাসওয়ার্ড</label>
+            <label>Password</label>
             <input 
               type="password" 
               value={password} 
               onChange={(e) => setPassword(e.target.value)} 
-              placeholder="পাসওয়ার্ড দিন"
+              placeholder="Enter your password"
               required 
             />
           </div>
           
-          <button type="submit" className="form-btn">লগইন করুন</button>
+          <button type="submit" className="form-btn">Login</button>
         </form>
         
         <button onClick={handleGoogleLogin} className="google-btn">
-           গুগল দিয়ে লগইন করুন
+           Login with Google
         </button>
         
         <div className="form-footer">
-          <p>অ্যাকাউন্ট নেই? <Link to="/register">রেজিস্টার করুন</Link></p>
+          <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </div>
       </div>
     </div>

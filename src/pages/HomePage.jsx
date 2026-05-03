@@ -11,7 +11,7 @@ const HomePage = () => {
     fetch('/animals.json')
       .then(res => res.json())
       .then(data => {
-        setAnimals(data.slice(0, 6));
+        setAnimals(data.slice(0, 4));
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -20,49 +20,101 @@ const HomePage = () => {
   if (loading) return <LoadingSpinner />;
 
   const tips = [
-    { title: "স্বাস্থ্য পরীক্ষা", desc: "পশুটি সুস্থ এবং টিকা দেওয়া আছে কিনা নিশ্চিত করুন" },
-    { title: "আগাম বুকিং", desc: "কোরবানির অন্তত ৭ দিন আগে বুকিং দিন" },
-    { title: "বিনামূল্যে ডেলিভারি", desc: "৫০ কিমি এর মধ্যে বিনামূল্যে ডেলিভারি" }
+    { title: "Health Check", desc: "Ensure the animal is healthy and vaccinated" },
+    { title: "Book Early", desc: "Book at least 7 days before Qurbani" },
+    { title: "Free Delivery", desc: "Free delivery within 50km radius" }
   ];
 
   const topBreeds = [
-    { name: "দেশী গরু", region: "বগুড়া", rating: 5 },
-    { name: "ফ্রিজিয়ান ক্রস", region: "ঢাকা", rating: 5 },
-    { name: "ব্ল্যাক বেঙ্গল", region: "রাজশাহী", rating: 5 },
-    { name: "শাহওয়াল গরু", region: "পাবনা", rating: 5 },
-    { name: "সাহিওয়াল", region: "চট্টগ্রাম", rating: 5 },
-    { name: "আংলো নুবিয়ান", region: "সিলেট", rating: 5 }
+    { 
+      name: "Deshi Cow", 
+      region: "Bogura", 
+      rating: 5,
+      image: "/images/cow-deshi.jpg",
+      description: "Local deshi cow, excellent meat quality"
+    },
+    { 
+      name: "Frisian Cross", 
+      region: "Dhaka", 
+      rating: 5,
+      image: "/images/cow-frisian.jpg",
+      description: "High milk and meat production"
+    },
+    { 
+      name: "Black Bengal", 
+      region: "Rajshahi", 
+      rating: 5,
+      image: "/images/goat-black.jpg",
+      description: "Famous for tender meat"
+    },
+    { 
+      name: "Shahwal Cow", 
+      region: "Pabna", 
+      rating: 5,
+      image: "/images/cow-shahwal.jpg",
+      description: "Premium large sized cow"
+    }
+  ];
+
+  const reviews = [
+    {
+      id: 1,
+      name: "Mohammad Rahim",
+      rating: 5,
+      text: "Excellent service! The cow was very healthy and well maintained.",
+      date: "January 15, 2024",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "Dhaka"
+    },
+    {
+      id: 2,
+      name: "Fatema Begum",
+      rating: 5,
+      text: "Great experience. The goat was exactly as described. Very professional.",
+      date: "January 10, 2024",
+      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      location: "Chittagong"
+    },
+    {
+      id: 3,
+      name: "Karim Ullah",
+      rating: 4,
+      text: "Good quality animal at reasonable price. Will recommend.",
+      date: "January 5, 2024",
+      image: "https://randomuser.me/api/portraits/men/45.jpg",
+      location: "Rajshahi"
+    }
   ];
 
   return (
     <div>
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1>পবিত্র কোরবানির জন্য<br />সেরা পশু সংগ্রহ করুন</h1>
-          <p>সুস্থ, পরিচর্যাকৃত এবং কোরবানির জন্য উপযোগী পশু। সেরা দামে, সেরা মানে।</p>
-          <Link to="/animals" className="hero-btn">পশু ব্রাউজ করুন →</Link>
+          <h1>Best Animals for<br />Sacred Qurbani</h1>
+          <p>Healthy, well-cared, and ready for Qurbani. Best price, best quality.</p>
+          <Link to="/animals" className="hero-btn">Browse Animals →</Link>
         </div>
       </div>
 
       {/* Featured Animals */}
       <div className="container">
-        <h2 className="section-title">বিশেষ পশুসমূহ</h2>
+        <h2 className="section-title">Featured Animals</h2>
         <div className="grid">
           {animals.map(animal => (
             <AnimalCard key={animal.id} animal={animal} />
           ))}
         </div>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <Link to="/animals" className="btn btn-primary">সব পশু দেখুন</Link>
+          <Link to="/animals" className="btn btn-primary">View All 15 Animals →</Link>
         </div>
       </div>
 
       {/* Qurbani Tips Section */}
       <div className="tips-section">
         <div className="container">
-          <h2 className="section-title">কোরবানির টিপস ও নির্দেশনা</h2>
+          <h2 className="section-title">Qurbani Tips & Guidelines</h2>
           <div className="tips-grid">
             {tips.map((tip, index) => (
               <div key={index} className="tip-card">
@@ -74,17 +126,55 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Top Breeds Section */}
+      {/* Top Breeds Section - ইমেজ সহ */}
       <div className="container">
-        <h2 className="section-title">বাংলাদেশের জনপ্রিয় জাত</h2>
+        <h2 className="section-title">Top Breeds in Bangladesh</h2>
         <div className="breeds-grid">
           {topBreeds.map((breed, index) => (
             <div key={index} className="breed-card">
+              <img src={breed.image} alt={breed.name} className="breed-image" />
               <div className="breed-rating">★★★★★</div>
               <h3>{breed.name}</h3>
-              <p>{breed.region}</p>
+              <p className="breed-region">{breed.region}</p>
+              <p className="breed-description">{breed.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Customer Testimonials Section */}
+      <div className="testimonials-section">
+        <div className="container">
+          <h2 className="section-title">Customer Testimonials</h2>
+          <p className="section-subtitle">What our customers say about us</p>
+
+          <div className="reviews-grid">
+            {reviews.map((review) => (
+              <div key={review.id} className="review-card">
+                {/* Profile */}
+                <div className="review-profile">
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    className="review-avatar"
+                  />
+                  <div>
+                    <h3 className="review-name">{review.name}</h3>
+                    <p className="review-location">📍 {review.location}</p>
+                  </div>
+                </div>
+
+                {/* Text */}
+                <p className="review-text">“{review.text}”</p>
+
+                {/* Stars */}
+                <div className="review-stars">
+                  {"★".repeat(review.rating)}
+                  {"☆".repeat(5 - review.rating)}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -92,18 +182,18 @@ const HomePage = () => {
       <div className="why-choose-section">
         <div className="container">
           <div className="why-choose-card">
-            <h2>কেন কোরবানিহাট?</h2>
+            <h2>Why Choose QurbaniHat?</h2>
             <div className="features-grid">
-              <div>✓ ১০০% সুস্থ ও টিকা দেওয়া পশু</div>
-              <div>✓ বিনামূল্যে ভেটেরিনারি চেকআপ</div>
-              <div>✓ হোম ডেলিভারি সুবিধা</div>
-              <div>✓ সেরা দামের গ্যারান্টি</div>
-              <div>✓ ২৪/৭ কাস্টমার সাপোর্ট</div>
+              <div>✓ 100% Healthy & Vaccinated Animals</div>
+              <div>✓ Free Veterinary Checkup</div>
+              <div>✓ Home Delivery Available</div>
+              <div>✓ Best Price Guarantee</div>
+              <div>✓ 24/7 Customer Support</div>
             </div>
             <div className="quran-quote">
-              "আর প্রত্যেক উম্মতের জন্য কোরবানি নির্ধারণ করেছি, যাতে তারা আল্লাহর নাম উচ্চারণ করে"
+              "And for every nation we have appointed a rite [of sacrifice] that they may mention the name of Allah"
               <br />
-              <span>- সূরা আল-হজ্জ, ২২:৩৪</span>
+              <span>- Surah Al-Hajj, 22:34</span>
             </div>
           </div>
         </div>

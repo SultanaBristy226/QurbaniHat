@@ -8,6 +8,8 @@ import AnimalDetailsPage from './pages/AnimalDetailsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
+import UpdateProfilePage from './pages/UpdateProfilePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/update-profile" element={<UpdateProfilePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
       <Toaster />

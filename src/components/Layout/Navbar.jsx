@@ -19,17 +19,17 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="nav-links">
-        <Link to="/">হোম</Link>
-        <Link to="/animals">সকল পশু</Link>
+        <Link to="/">Home</Link>
+        <Link to="/animals">All Animals</Link>
         {user ? (
           <>
             <Link to="/profile">{user.name}</Link>
-            <button onClick={handleLogout}>লগআউট</button>
+            <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>
-            <Link to="/login">লগইন</Link>
-            <Link to="/register">রেজিস্টার</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </>
         )}
       </div>

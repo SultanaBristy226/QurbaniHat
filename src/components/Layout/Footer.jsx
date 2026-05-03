@@ -6,34 +6,34 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>কোরবানিহাট</h3>
-            <p>আপনার বিশ্বস্ত কোরবানির পশু সংগ্রহের প্ল্যাটফর্ম</p>
+            <h3>QurbaniHat</h3>
+            <p>Your trusted platform for Qurbani animal bookings</p>
           </div>
           
           <div className="footer-section">
-            <h3>যোগাযোগ</h3>
-            <p>📞 +880 1234 567890</p>
+            <h3>Contact</h3>
+            <p>📞 +880 1837499226</p>
             <p>✉️ info@qurbanihat.com</p>
-            <p>📍 ঢাকা, বাংলাদেশ</p>
+            <p>📍 Dhaka, Bangladesh</p>
           </div>
           
           <div className="footer-section">
-            <h3>লিংক</h3>
-            <p><a href="/">হোম</a></p>
-            <p><a href="/animals">সকল পশু</a></p>
-            <p><a href="/login">লগইন</a></p>
+            <h3>Quick Links</h3>
+            <p><a href="/">Home</a></p>
+            <p><a href="/animals">All Animals</a></p>
+            <p><a href="/login">Login</a></p>
           </div>
           
           <div className="footer-section">
-            <h3>সোশ্যাল মিডিয়া</h3>
-            <p>ফেসবুক</p>
-            <p>টুইটার</p>
-            <p>ইনস্টাগ্রাম</p>
+            <h3>Social Media</h3>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>Instagram</p>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2024 কোরবানিহাট | সর্বস্বত্ব সংরক্ষিত</p>
+          <p>&copy; 2024 QurbaniHat | All Rights Reserved</p>
         </div>
       </div>
     </footer>

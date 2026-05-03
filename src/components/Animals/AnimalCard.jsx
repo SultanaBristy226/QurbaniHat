@@ -11,11 +11,11 @@ const AnimalCard = ({ animal }) => {
       <div className="card-content">
         <h3 className="card-title">{animal.name}</h3>
         <p>{animal.breed} | {animal.type}</p>
-        <p>📍 {animal.location}</p>
-        <p>⚖️ {animal.weight} kg | 🕒 {animal.age} বছর</p>
-        <div className="card-price">৳{animal.price.toLocaleString()}</div>
+        <p>{animal.location}</p>
+        <p> {animal.weight} kg |  {animal.age} years</p>
+        <div className="card-price">{animal.price.toLocaleString()}</div>
         <Link to={`/animal/${animal.id}`} className="btn btn-primary">
-          বিস্তারিত দেখুন
+          View Details
         </Link>
       </div>
     </div>

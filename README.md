@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# QurbaniHat – Livestock Booking Platform
+
+## Project Purpose
+QurbaniHat is a modern web application that connects users with healthy livestock (cows & goats) for Qurbani. Users can browse animals, view detailed profiles, and place bookings securely after authentication.
+
+## Live URL
+[Your Vercel/Netlify Link will be here]
+
+## Key Features
+- **User Authentication:** Email/Password login & Google Social Login.
+- **Animal Marketplace:** Browse, sort by price, and view detailed animal profiles.
+- **Booking System:** Authenticated users can book animals via a simple form.
+- **User Profile:** View and update your profile information (Name & Photo).
+- **Responsive Design:** Fully functional on mobile, tablet, and desktop devices.
+- **Toast Notifications:** Instant feedback for all user actions.
+- **Lottie Animations:** Smooth, engaging animations on the homepage.
+
+## NPM Packages Used
+- `react-router-dom` - For routing
+- `react-hot-toast` - For notifications
+- `lottie-react` - For animations
+- `react-icons` - For icons
+- `tailwindcss` - For styling (configured)

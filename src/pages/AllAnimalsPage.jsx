@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AnimalCard from '../components/Animals/AnimalCard';
-import SortControls from '../components/Animals/SortControls';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
-import { motion } from 'framer-motion';
 
 const AllAnimalsPage = () => {
   const [animals, setAnimals] = useState([]);
@@ -34,31 +32,32 @@ const AllAnimalsPage = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen py-12">
-      <div className="container-custom">
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="text-center mb-12"
+    <div className="container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+      <h1 className="section-title">All Animals for Qurbani</h1>
+      
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '2rem' }}>
+        <select 
+          value={sortOrder} 
+          onChange={(e) => setSortOrder(e.target.value)}
+          style={{ padding: '0.5rem', borderRadius: '5px', border: '1px solid #ddd' }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-dark mb-4">All Animals for Qurbani</h1>
-          <p className="text-gray-600 text-lg">Browse our complete collection of healthy livestock</p>
-        </motion.div>
-
-        <SortControls sortOrder={sortOrder} onSortChange={setSortOrder} />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredAnimals.map(animal => (
-            <AnimalCard key={animal.id} animal={animal} />
-          ))}
-        </div>
-
-        {filteredAnimals.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No animals found.</p>
-          </div>
-        )}
+          <option value="default">Default Order</option>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
       </div>
+
+      <div className="grid">
+        {filteredAnimals.map(animal => (
+          <AnimalCard key={animal.id} animal={animal} />
+        ))}
+      </div>
+
+      {filteredAnimals.length === 0 && (
+        <div style={{ textAlign: 'center', padding: '3rem' }}>
+          <p>No animals found.</p>
+        </div>
+      )}
     </div>
   );
 };
