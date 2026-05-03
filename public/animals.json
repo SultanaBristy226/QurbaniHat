@@ -9,7 +9,7 @@
     "age": 3,
     "location": "Bogura",
     "image": "/images/cow-deshi.jpg",
-    "description": "Healthy deshi cow suitable for Qurbani.",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural food.",
     "category": "Large Animal",
     "rating": 4.8,
     "reviews": 124
@@ -24,7 +24,7 @@
     "age": 4,
     "location": "Dhaka",
     "image": "/images/cow-frisian.jpg",
-    "description": "High quality Frisian cross breed.",
+    "description": "High quality Frisian cross breed. Maximum meat production.",
     "category": "Large Animal",
     "rating": 4.9,
     "reviews": 89
@@ -39,7 +39,7 @@
     "age": 2,
     "location": "Rajshahi",
     "image": "/images/goat-black.jpg",
-    "description": "Famous Black Bengal goat. Tender meat.",
+    "description": "Famous Black Bengal goat. Known for tender and flavorful meat.",
     "category": "Small Animal",
     "rating": 4.7,
     "reviews": 56
@@ -54,7 +54,7 @@
     "age": 5,
     "location": "Pabna",
     "image": "/images/cow-shahwal.jpg",
-    "description": "Premium Shahwal breed. Large sized.",
+    "description": "Premium Shahwal breed. Large sized with excellent meat distribution.",
     "category": "Large Animal",
     "rating": 5.0,
     "reviews": 67
@@ -69,7 +69,7 @@
     "age": 2.5,
     "location": "Chittagong",
     "image": "/images/goat-saanen.jpg",
-    "description": "Imported Saanen breed. High weight.",
+    "description": "Imported Saanen breed. High weight and excellent meat quality.",
     "category": "Small Animal",
     "rating": 4.6,
     "reviews": 43
@@ -84,7 +84,7 @@
     "age": 3.5,
     "location": "Mymensingh",
     "image": "/images/cow-angus.jpg",
-    "description": "Australian Angus cross. Premium beef.",
+    "description": "Australian Angus cross. Excellent meat-to-bone ratio.",
     "category": "Large Animal",
     "rating": 4.9,
     "reviews": 92
@@ -99,7 +99,7 @@
     "age": 4,
     "location": "Jamalpur",
     "image": "/images/cow-jamuna.jpg",
-    "description": "Beautiful Jamuna Pari breed.",
+    "description": "Beautiful Jamuna Pari breed. Known for excellent meat quality.",
     "category": "Large Animal",
     "rating": 4.7,
     "reviews": 78
@@ -114,7 +114,7 @@
     "age": 1.5,
     "location": "Natore",
     "image": "/images/goat-barbari.jpg",
-    "description": "Small Barbari goat for small families.",
+    "description": "Small sized Barbari goat. Perfect for small families.",
     "category": "Small Animal",
     "rating": 4.5,
     "reviews": 34
@@ -129,7 +129,7 @@
     "age": 3.5,
     "location": "Sylhet",
     "image": "/images/cow-holstein.jpg",
-    "description": "Pure Holstein breed. Excellent meat.",
+    "description": "Pure Holstein breed. Excellent meat quality.",
     "category": "Large Animal",
     "rating": 4.6,
     "reviews": 45
@@ -144,7 +144,7 @@
     "age": 3,
     "location": "Kushtia",
     "image": "/images/goat-jamnapari.jpg",
-    "description": "Large Jamnapari goat. Premium quality.",
+    "description": "Large sized Jamnapari goat. Premium quality.",
     "category": "Small Animal",
     "rating": 4.9,
     "reviews": 61
@@ -159,7 +159,7 @@
     "age": 4,
     "location": "Rajshahi",
     "image": "/images/cow-sahiwal.jpg",
-    "description": "Pure Sahiwal breed. Heat tolerant.",
+    "description": "Pure Sahiwal breed. Heat tolerant and disease resistant.",
     "category": "Large Animal",
     "rating": 4.7,
     "reviews": 53
@@ -174,7 +174,7 @@
     "age": 2,
     "location": "Khulna",
     "image": "/images/goat-kanni.jpg",
-    "description": "Rare Kanni breed. Excellent meat.",
+    "description": "Rare Kanni breed. Excellent meat quality.",
     "category": "Small Animal",
     "rating": 4.4,
     "reviews": 28
@@ -189,7 +189,7 @@
     "age": 3,
     "location": "Chittagong",
     "image": "/images/cow-red.jpg",
-    "description": "Native Red Chittagong breed.",
+    "description": "Native Red Chittagong breed. Healthy and active.",
     "category": "Large Animal",
     "rating": 4.6,
     "reviews": 39
@@ -204,7 +204,7 @@
     "age": 3,
     "location": "Gazipur",
     "image": "/images/goat-boer.jpg",
-    "description": "South African Boer goat. Premium.",
+    "description": "South African Boer goat. Premium quality.",
     "category": "Small Animal",
     "rating": 5.0,
     "reviews": 72
@@ -219,7 +219,7 @@
     "age": 5,
     "location": "Mymensingh",
     "image": "/images/buffalo-nili.jpg",
-    "description": "Premium Nili Ravi buffalo. Massive size.",
+    "description": "Premium Nili Ravi buffalo. Massive size with excellent meat quantity.",
     "category": "Large Animal",
     "rating": 4.8,
     "reviews": 81
