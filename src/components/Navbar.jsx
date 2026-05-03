@@ -12,8 +12,16 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="logo">
-          <span className="logo-icon">🐂</span>
-          <span className="logo-text">Qurbani<span>Hat</span></span>
+          <img 
+            src="/logo.png" 
+            alt="QurbaniHat Logo" 
+            className="logo-img"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'inline';
+            }}
+          />
+          <span className="logo-text" style={{ display: 'inline' }}>Qurbani<span>Hat</span></span>
         </Link>
         
         <div className="nav-menu">
@@ -30,9 +38,7 @@ const Navbar = () => {
                 />
                 <span className="user-name">{user.name}</span>
               </Link>
-              <button onClick={handleLogout} className="logout-btn">
-                <span>🚪</span> Logout
-              </button>
+              <button onClick={handleLogout} className="logout-btn">Logout</button>
             </>
           ) : (
             <>
@@ -42,10 +48,7 @@ const Navbar = () => {
           )}
         </div>
         
-        {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn" id="mobileMenuBtn">
-          ☰
-        </button>
+        <button className="mobile-menu-btn">☰</button>
       </div>
     </nav>
   );
