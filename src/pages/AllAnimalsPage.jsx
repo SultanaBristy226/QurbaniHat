@@ -38,10 +38,10 @@ const AllAnimalsPage = () => {
     setFilteredAnimals(filtered);
   }, [sortOrder, selectedCategory, animals]);
 
-  // Get unique categories
-  const categories = ['all', ...new Set(animals.map(animal => animal.category))];
-
   if (loading) return <LoadingSpinner />;
+
+  const largeCount = animals.filter(a => a.category === 'Large Animal').length;
+  const smallCount = animals.filter(a => a.category === 'Small Animal').length;
 
   return (
     <div className="container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
@@ -52,7 +52,6 @@ const AllAnimalsPage = () => {
       
       {/* Filter and Sort Controls */}
       <div className="filter-sort-container">
-        {/* Category Filter */}
         <div className="filter-group">
           <label>Category: </label>
           <select 
@@ -60,13 +59,12 @@ const AllAnimalsPage = () => {
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="filter-select"
           >
-            <option value="all">All Categories</option>
-            <option value="Large Animal">Large Animal (Cow/Buffalo)</option>
-            <option value="Small Animal">Small Animal (Goat)</option>
+            <option value="all">All Categories ({animals.length})</option>
+            <option value="Large Animal"> Large Animal ({largeCount})</option>
+            <option value="Small Animal"> Small Animal ({smallCount})</option>
           </select>
         </div>
 
-        {/* Sort by Price */}
         <div className="filter-group">
           <label>Sort by: </label>
           <select 
@@ -83,12 +81,8 @@ const AllAnimalsPage = () => {
 
       {/* Category Summary */}
       <div className="category-summary">
-        <span className="category-badge large">
-           Large Animals: {animals.filter(a => a.category === 'Large Animal').length}
-        </span>
-        <span className="category-badge small">
-           Small Animals: {animals.filter(a => a.category === 'Small Animal').length}
-        </span>
+        <span className="category-badge large"> Large Animals: {largeCount}</span>
+        <span className="category-badge small"> Small Animals: {smallCount}</span>
       </div>
 
       {/* Animals Grid */}
@@ -101,6 +95,13 @@ const AllAnimalsPage = () => {
       {filteredAnimals.length === 0 && (
         <div style={{ textAlign: 'center', padding: '3rem' }}>
           <p>No animals found in this category.</p>
+          <button 
+            onClick={() => setSelectedCategory('all')} 
+            className="btn btn-primary"
+            style={{ marginTop: '1rem' }}
+          >
+            View All Animals
+          </button>
         </div>
       )}
     </div>
